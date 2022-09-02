@@ -1,0 +1,11 @@
+{
+  "name": "novidicustitan/eindproef-php-adv-mathies-t",
+  "require": {
+    "twig/twig": "^3.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "App/"
+    }
+  }
+}
