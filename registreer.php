@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-use App\Business\gebruikersService;
+use App\Business\GebruikersService;
 use App\Data\GebruikersDAO;
 use App\Entities\Gebruikers;
 
@@ -54,7 +54,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'submit') {
 
     $gebruiker     = new Gebruikers($voornaam, $achternaam, $straat, $huisnummer,
         $postcode, $gemeente, $telefoon, $korting, $id ?? null);
-    $gebruikersSVC = new gebruikersService();
+    $gebruikersSVC = new GebruikersService();
 //    gebruiker gemaakt zonder account, enkel verder indien account nodig
     if (isset($_POST['account']) && (int)$_POST['account'] === 1) {
         $account = 1; #wordt gebruikt in de view
@@ -88,7 +88,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'submit') {
                         if (!isset($_GET['aanpassen']) || $_GET['aanpassen'] !== 'ja') {
 //                            nieuwe toevoegen
                             try {
-                                $gebruikersSVC = new gebruikersService();
+                                $gebruikersSVC = new GebruikersService();
                                 $gelukt        = $gebruikersSVC->VoegGebruikerToeService($gebruiker);
                                 // $gelukt is false of last insert id
                                 if ($gelukt) {

@@ -2,7 +2,7 @@
 
 namespace App\Data;
 
-use \PDO;
+use PDO;
 
 class StatusDAO extends DBconfig
 {

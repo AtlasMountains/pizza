@@ -2,14 +2,14 @@
 
 namespace App\Data;
 
-use \PDO;
+use PDO;
 
 class BestelLijnenDAO extends DBconfig
 {
     public function voegLijnToe(int   $bestelID, int $pizzaID, int $aantal,
                                 float $prijs): bool|string
     {
-        $sql = 'insert into bestellijnen (bestelID, pizzaID, aantal, prijs) 
+        $sql = 'insert into bestelLijnen (bestelID, pizzaID, aantal, prijs) 
         values (
             :bestelID,:pizzaID,:aantal,:prijs
         )';

@@ -2,8 +2,8 @@
 
 namespace App\Data;
 
-use \PDO;
-use \Exception;
+use PDO;
+use Exception;
 use PDOException;
 
 abstract class DBconfig

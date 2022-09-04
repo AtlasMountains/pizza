@@ -28,7 +28,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'true') {
             $gebruikerdata = $gebruikersDAO->getGebruikerByEmail($email);
             $gebruiker = new Gebruikers($gebruikerdata->voornaam, $gebruikerdata->achternaam, $gebruikerdata->straat,
                 $gebruikerdata->huisnummer, $gebruikerdata->postcode, $gebruikerdata->gemeente, $gebruikerdata->telefoon,
-                $gebruikerdata->korting, $gebruikerdata->id, $gebruikerdata->email, $gebruikerdata->wachtwoord);
+                $gebruikerdata->korting, $gebruikerdata->id, $gebruikerdata->email, $gebruikerdata->wachtwoord_hash);
             $_SESSION['gebruiker'] = serialize($gebruiker);
             if (isset($_COOKIE['mandje']) && $_COOKIE['mandje']) {
                 header('location: afrekenen.php');
